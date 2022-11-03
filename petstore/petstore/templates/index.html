@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container p-5 my-5 border">
+  <h2 align="center"> Welcome to the Pet Store! This is the story so far</h2> 
+  <a class="nav-link">To view functionalities of the page you need to be logged in. 
+    You can create new account in admin panel or use Branko:BrankoBranko (or admin:admin1). Branko can create, update, delete Pet, Category and Tags
+    which he made. Branko can only view Pets, Categories and Tags of other users and cannot edit or delete them.</a>
+  <a class="nav-link">Consuming API is not yet implemented.</a>
+
+
+{% if user.is_authenticated %}
+
+<li class="nav-item active">
+  <a class="nav-link" href="/api/users/">List of Users</a>
+  <a class="nav-link"> List of Users shows all users registered on platform. To see more info on
+    specific user add id (number) at the end /api/users/1/ </a>
+</li>
+<li class="nav-item active">
+  <a class="nav-link" href="/api/pets/">List of Pets</a>
+  <a class="nav-link"> List of Pets shows all pets available in Pet Store. To see more info on
+    specific pet add id (number) at the end /api/pets/1/ </a>
+</li>
+<li class="nav-item active ">
+  <a class="nav-link" href="/api/categories/">List of Categories</a>
+  <a class="nav-link"> List of Categories shows all categories available in Pet Store. To see more info on
+    specific category add id (number) at the end /api/categories/1/ </a>
+</li>
+<li class="nav-item active ">
+    <a class="nav-link" href="/api/tags/">List of Tags</a>
+    <a class="nav-link"> List of Tags shows all tags available in Pet Store. To see more info on
+      specific tag add id (number) at the end /api/tags/1/ </a>
+  </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+
+<li class="nav-item active">
+
+{% endif %}
+</div>
+
+{% endblock content %}
